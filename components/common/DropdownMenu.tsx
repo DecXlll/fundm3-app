@@ -27,8 +27,8 @@ const Dropdown = () => {
             </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
+            {/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
+            {/* <DropdownMenuSeparator /> */}
             <Link href="/profile" >
                 <DropdownMenuItem>My Profile</DropdownMenuItem>
             </Link>

@@ -38,6 +38,7 @@ const CreateProjectForm = () => {
     instagram: z.string().optional(),
     github: z.string().optional(),
     telegram: z.string().optional(),
+    twitter: z.string().optional(),
   });
 
   // Define your form.
@@ -51,6 +52,7 @@ const CreateProjectForm = () => {
       instagram: "",
       github: "",
       telegram: "",
+      twitter: "",
     },
   });
 
@@ -356,6 +358,26 @@ const CreateProjectForm = () => {
                 </FormItem>
               )}
             />
+            <FormField
+              control={form.control}
+              name="twitter"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>X</FormLabel>
+                  <FormControl>
+                    <div className="flex items-center">
+                      <span className="text-gray-500 mr-2">@</span>
+                      <Input
+                        placeholder="username"
+                        {...field}
+                        className="input-field"
+                      />
+                    </div>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           </div>
           <div className="flex flex-col gap-5">
             <FormField
@@ -368,7 +390,7 @@ const CreateProjectForm = () => {
                     <Textarea
                       placeholder="Description"
                       {...field}
-                      className="textarea rounded-2xl h-[90%]"
+                      className="textarea rounded-2xl h-[95%]"
                     />
                   </FormControl>
                   <FormMessage />
