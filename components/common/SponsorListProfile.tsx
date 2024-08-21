@@ -50,6 +50,10 @@ const SponsorListProfile: React.FC<SponsorListProps> = ({ recipientAddress }) =>
     };
 
     fetchDonations();
+
+    const intervalId = setInterval(fetchDonations, 60*1000);
+  
+    return () => clearInterval(intervalId);
   }, [recipientAddress]);
 
   if (loading) {
