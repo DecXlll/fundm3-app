@@ -33,6 +33,7 @@ const formSchema = z.object({
   instagram: z.string().nullable(),
   github: z.string().nullable(),
   telegram: z.string().nullable(),
+  twitter: z.string().nullable(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -45,6 +46,7 @@ const fieldDisplayNames = {
   instagram: "Instagram",
   github: "GitHub",
   telegram: "Telegram",
+  twitter: "X",
 };
 
 const fieldPlaceholders = {
@@ -55,6 +57,7 @@ const fieldPlaceholders = {
   instagram: "username",
   github: "username",
   telegram: "username",
+  twitter: "username",
 };
 
 const DefaultUserIcon = () => (
@@ -87,6 +90,7 @@ const ProfileDetails = () => {
       instagram: null,
       github: null,
       telegram: null,
+      twitter: null,
     },
   });
 
@@ -174,6 +178,7 @@ const ProfileDetails = () => {
               "instagram",
               "github",
               "telegram",
+              "twitter"
             ].map((fieldName) => (
               <FormField
                 key={fieldName}
@@ -190,7 +195,7 @@ const ProfileDetails = () => {
                     </FormLabel>
                     <div className="flex items-center gap-2">
                       <FormControl className="flex-grow">
-                        {["instagram", "github", "telegram"].includes(
+                        {["instagram", "github", "telegram","twitter"].includes(
                           fieldName
                         ) ? (
                           <div className="flex items-center">
@@ -227,7 +232,7 @@ const ProfileDetails = () => {
                       </FormControl>
                       {!isEditMode &&
                         field.value &&
-                        ["fid", "instagram", "github", "telegram"].includes(
+                        ["fid", "instagram", "github", "telegram","twitter"].includes(
                           fieldName
                         ) && (
                           <Link
